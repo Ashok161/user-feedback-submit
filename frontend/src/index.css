@@ -1,0 +1,107 @@
+/* ─────────  Design tokens  ───────── */
+:root{
+  --primary:#2563eb;
+  --primary-dark:#1e4ed8;
+  --bg:#f8f9fc;
+  --card:#ffffff;
+  --border:#e5e7eb;
+  --text:#1f2937;
+}
+
+/* ─────────  Global reset  ───────── */
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* ─────────  Layout containers  ───────── */
+.wrapper{
+  max-width:900px;
+  margin:auto;
+  padding:4rem 1.5rem;
+  display:flex;
+  flex-direction:column;
+  gap:3rem;
+}
+.card{
+  background:var(--card);
+  border-radius:12px;
+  padding:2.5rem 2rem;
+  box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+
+/* ─────────  Form styles  ───────── */
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.5rem;
+}
+.form-field label{
+  display:block;
+  font-weight:600;
+  margin-bottom:.5rem;
+  font-size:.9rem;
+}
+.form-input{
+  width:100%;
+  padding:.8rem 1rem;
+  border:1px solid var(--border);
+  border-radius:8px;
+  font-size:.95rem;
+}
+textarea.form-input{
+  resize:vertical;           /* ← fixed: valid property */
+  height:140px;
+}
+.btn-primary{
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  padding:.8rem 2rem;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  transition:background .2s ease;
+}
+.btn-primary:hover{background:var(--primary-dark);}
+
+/* ─────────  Dashboard controls  ───────── */
+.controls{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin-bottom:1.5rem;
+}
+select.control,button.control{
+  padding:.6rem 1rem;
+  border:1px solid var(--border);
+  border-radius:8px;
+  font-size:.9rem;
+  background:#fff;
+  cursor:pointer;
+}
+
+/* ─────────  Feedback table  ───────── */
+.table-wrapper{overflow-x:auto}
+.feedback-table{
+  width:100%;
+  min-width:800px;
+  border-collapse:collapse;
+}
+.feedback-table th,
+.feedback-table td{
+  padding:1rem;
+  text-align:left;
+  border-bottom:1px solid var(--border);
+}
+.feedback-table th{
+  background:#f3f4f6;
+  font-weight:600;
+  font-size:.9rem;
+}
+.feedback-table tbody tr:nth-child(even){background:#fafafa;}
+.feedback-table tbody tr:hover{background:#eef2ff;}
